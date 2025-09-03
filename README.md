@@ -36,11 +36,11 @@ Druckkopf.png: A render of the specially designed extruder head.
 
 curapic.png: A slicer view of the fiber paths in a test object.
 
-Servo.ino: A standalone Arduino sketch for basic servo testing.
+Servo.Code.ino: A standalone Arduino sketch for basic servo testing.
 
-StepperMotor-Basic.ino: A standalone Arduino sketch for basic stepper motor testing.
+Stepper_Code.ino: A standalone Arduino sketch for basic stepper motor testing.
 
-/Marlin-Firmware/: A folder containing the modified Marlin firmware files. (Note: You will need to upload this folder and its files to the repository)
+Marlin.confi.ino: A folder containing the modified Marlin firmware files. (Note: You will need to upload this folder and its files to the repository)
 
 💻 Firmware Integration (Marlin)
 The core functionality of this extruder is achieved by modifying the open-source Marlin firmware. The provided Servo.ino and StepperMotor-Basic.ino sketches represent the key control logic that has been adapted and integrated into the main Marlin codebase to operate the parallel extruder.
