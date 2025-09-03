@@ -5,7 +5,7 @@ This repository contains the firmware and design files for a specialized, custom
 This image illustrates the core concept behind the work: the integration of a separate unit for the extrusion of coated carbon fibers alongside a standard filament extruder.
 
 <br>
-<img src="https://www.google.com/search?q=https://github.com/Pyrius2k/Additive-Manufacturing/raw/main/concept.png" alt="Basic concept of the project" width="650">
+<img src="https://github.com/Pyrius2k/Additive-Manufacturing/raw/main/concept.png" alt="Basic concept of the project" width="650">
 
 <br>
 
@@ -23,7 +23,7 @@ The extruder head was designed to allow for the dual extrusion of both plastic (
 
 <br>
 <img src="https://github.com/Pyrius2k/Additive-Manufacturing/raw/main/Druckkopf.png" alt="Render of the extruder head" width="500">
-<img src="https://www.google.com/search?q=https://github.com/Pyrius2k/Additive-Manufacturing/raw/main/curapic.png" alt="Slicer view in Cura" width="500">
+<img src="https://github.com/Pyrius2k/Additive-Manufacturing/raw/main/curapic.png" alt="Slicer view in Cura" width="500">
 
 <br>
 
@@ -61,7 +61,3 @@ Assemble the Hardware: Mount the stepper motors, servos, and fans.
 Flash the Firmware: Upload the customized Marlin firmware to your 3D printer's mainboard.
 
 Calibrate: Perform the necessary calibration steps for the extruder.
-
-This video explains the basics of reinforcing 3D prints with carbon fiber.
-<br>
-How to reinforce your 3D prints with carbon fiber.
