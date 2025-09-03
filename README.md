@@ -1,40 +1,37 @@
-# ⚙️ Parallel Extruder Head for 3D Printers
+# ⚙️ Parallel Extruder Head for Fiber-Reinforced 3D Printing
 
-This repository contains the firmware and design files for a custom-built parallel extruder head, specifically developed for a 3D printer. This project integrates both servo and stepper motor control to achieve a unique, compact extrusion system.
+This repository contains the firmware and design files for a specialized, custom-built extruder head developed for the 3D printing of **fiber-reinforced objects**. This project is inspired by the **Markforged concept** and uses a parallel component arrangement to create a unique and compact extrusion solution. The ultimate goal was to print objects strengthened with coated carbon fibers to achieve higher material strength.
 
 ![Custom Parallel Extruder Head](https://github.com/Pyrius2k/Additive-Manufacturing/raw/main/Druckkopf.png)
 
 ## ✨ Project Overview
 
-The goal of this project was to design and build a lightweight, custom extruder head that utilizes a parallel arrangement of components. The design includes:
+The aim of this project was to design a lightweight, custom extruder head for 3D printing that allows the use of fiber-reinforced materials.
 
-* **Stepper Motors:** For precise control of filament extrusion.
-* **Servos:** Integrated to control specific movements or functions.
-* **Custom-Printed Parts:** All components are designed to be 3D printed for easy replication.
-
-This project is a great resource for anyone interested in advanced 3D printer modifications, custom firmware, or mechatronics.
+* **Fiber Reinforcement:** The design is specifically optimized to process **coated carbon fibers**.
+* **Stepper & Servo:** The integration of stepper and servo motors enables precise control over the extrusion and fiber feeding process. The **servo motor has a sharp object attached to it to cut the fiber** at the end of a print section, a core feature inspired by the Markforged concept.
+* **Lightweight Construction:** The configuration aims to reduce mass to improve print speed and accuracy.
 
 ---
 
 ## 📁 Repository Contents
 
-* **`Druckkopf.png`**: A render of the custom-designed extruder head.
-* **`Servo.ino`**: Standalone Arduino sketch for basic servo testing.
-* **`StepperMotor-Basic.ino`**: Standalone Arduino sketch for basic stepper motor testing.
-* **`/Marlin-Firmware/`**: A folder containing the modified Marlin firmware files. The core logic for the servo and stepper motor control is integrated here. *(Note: You would need to add this folder and its files to your repository)*
-* **`/CAD-Files/`**: A folder containing the 3D design files for the extruder parts in `.stl`, `.dwg`, or other formats. *(Note: You would need to add this folder and its files to your repository)*
+* **`Druckkopf.png`**: A render of the specially designed extruder head.
+* **`Servo.ino`**: A standalone Arduino sketch for basic servo testing.
+* **`StepperMotor-Basic.ino`**: A standalone Arduino sketch for basic stepper motor testing.
+* **`/Marlin-Firmware/`**: A folder containing the modified Marlin firmware files. The core logic for controlling the motors is integrated here. *(Note: You will need to upload this folder and its files to the repository)*
 
 ---
 
 ## 💻 Firmware Integration (Marlin)
 
-The core functionality of this extruder is managed by modifying the open-source **Marlin firmware**. The provided `Servo.ino` and `StepperMotor-Basic.ino` sketches represent the key control logic that has been adapted and integrated into the main Marlin code base to operate the parallel extruder.
+The core functionality of this extruder is achieved by modifying the open-source **Marlin firmware**. The provided `Servo.ino` and `StepperMotor-Basic.ino` sketches represent the key control logic that has been adapted and integrated into the main Marlin codebase to operate the parallel extruder.
 
 **Key firmware modifications include:**
 
 * Custom pin definitions for the servo and stepper drivers.
-* Logic for controlling the servo's position during specific G-code commands.
-* Step/direction pulse generation for the stepper motors.
+* Logic for controlling the servo's position to cut the fiber during specific G-code commands.
+* Pulse generation for the stepper motors for precise fiber feeding.
 
 ---
 
@@ -42,11 +39,12 @@ The core functionality of this extruder is managed by modifying the open-source 
 
 To replicate this project, you will need to:
 
-1.  **Print the Parts:** 3D print all the components from the CAD files.
-2.  **Assemble the Hardware:** Mount the stepper motors, servos, and fans to the printed parts.
-3.  **Flash the Firmware:** Upload the custom Marlin firmware to your 3D printer's mainboard.
-4.  **Calibrate:** Perform the necessary calibration steps for the extruder.
+1.  **Assemble the Hardware:** Mount the stepper motors, servos, and fans to the printed parts.
+2.  **Flash the Firmware:** Upload the customized Marlin firmware to your 3D printer's mainboard.
+3.  **Calibrate:** Perform the necessary calibration steps for the extruder.
 
 ---
 
-**You can replace the placeholder text and URLs with your actual information.** For instance, change `YourUsername` and `YourRepoName` to your own details, and remember to add the referenced files and folders to your repository.
+This video explains the basics of reinforcing 3D prints with carbon fiber.
+<br>
+[How to reinforce your 3D prints with carbon fiber.](https://www.youtube.com/watch?v=BATPn2OY-4I)
