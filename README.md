@@ -102,7 +102,11 @@ Ideas, suggestions, and PRs are welcome—whether it’s for improving slicing s
 
 ---
 
-## 📜 License
+## Patents & Related Work
 
-This project is open-source under the MIT License. Feel free to adapt, remix, and build upon the work.
+[![Patent US20180345572A1](https://img.shields.io/badge/📄_Patent-US20180345572A1-blue?style=for-the-badge)](https://patents.google.com/patent/US20180345572A1/en)
+
+[![Patent US9370896B2](https://img.shields.io/badge/📄_Patent-US9370896B2-green?style=for-the-badge)](https://patents.google.com/patent/US9370896B2/en)
+
+
 
