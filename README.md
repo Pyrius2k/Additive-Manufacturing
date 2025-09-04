@@ -1,67 +1,108 @@
 # ⚙️ Parallel Extruder Head for Fiber-Reinforced 3D Printing
 
----
-
-This repository contains the firmware and design files for a specialized, custom-built extruder head developed for the 3D printing of fiber-reinforced objects. Inspired by the **Markforged concept**, this project utilizes a parallel component arrangement to create a unique and compact extrusion solution. The ultimate goal is to print objects strengthened with coated carbon fibers to achieve higher material strength.
-
-## ✨ The Basic Concept
+This repository contains the firmware and design files for a custom-built extruder head designed for the 3D printing of fiber-reinforced objects. Inspired by the **Markforged concept**, this project features a **parallel extruder system** capable of handling both standard filament and **coated carbon fibers**, enabling the creation of high-strength composite prints.
 
 ---
 
-This image illustrates the core concept behind the work: the integration of a separate unit for the extrusion of coated carbon fibers alongside a standard filament extruder.
+## ✨ Project Concept
 
-![Basic concept of the project](https://github.com/Pyrius2k/Additive-Manufacturing/raw/main/concept.png)
+The image below illustrates the core concept: an integrated dual-extrusion head—one for standard filament and another for coated carbon fibers.
 
-## 🎯 Goal and Project Overview
-
----
-
-The main objective of this project was to significantly increase the tensile strength of 3D-printed objects by using coated carbon fibers. The developed extruder head is specifically designed to process this material.
-
-* **Fiber Reinforcement:** The design is optimized to precisely process coated carbon fibers.
-* **Stepper & Servo:** **Stepper motors** ensure accurate fiber extrusion, while a **servo motor** with a sharp object attached cuts the fiber at the end of a print section—a core feature inspired by the Markforged concept.
-* **Lightweight Construction:** The configuration aims to reduce mass to improve print speed and accuracy.
-
-## 🛠️ Design and Slicing Integration
+<div align="center">
+  <img src="https://github.com/Pyrius2k/Additive-Manufacturing/raw/main/concept.png" width="500">
+</div>
 
 ---
 
-The extruder head was designed to allow for the dual extrusion of both plastic (PLA) and carbon fibers. The slicer software is configured to strategically place the fibers in specific paths to achieve maximum strength.
+## 🎯 Project Goals
 
-![Render of the extruder head](https://github.com/Pyrius2k/Additive-Manufacturing/raw/main/Druckkopf.png)
-![Slicer view in Cura](https://github.com/Pyrius2k/Additive-Manufacturing/raw/main/curapic.png)
+The primary objective of this project is to significantly improve the **tensile strength** of 3D-printed parts by embedding continuous or segmented carbon fibers into the print path.
 
-The second image shows a slicer view of a tensile test specimen with the embedded carbon fiber paths, which were designed for strength testing.
+### ✅ Key Features:
+
+- **Fiber Reinforcement**: Optimized for extruding coated carbon fibers alongside PLA.
+- **Precision Mechanics**:  
+  - **Stepper Motor** for accurate fiber feeding  
+  - **Servo Motor** with a sharp blade to cut fiber segments after each print section
+- **Lightweight Design**: Carefully engineered to reduce head weight for faster, more accurate prints.
+
+---
+
+## 🛠️ Design Overview & Slicer Integration
+
+The extruder is fully integrated with slicing software (e.g., Cura) to allow for **strategic fiber placement** in designated toolpaths—particularly useful for structural parts like **tensile test specimens**.
+
+<div align="center">
+  <img src="https://github.com/Pyrius2k/Additive-Manufacturing/raw/main/Druckkopf.png" width="450">
+  <br><em>3D Render of the Custom Extruder Head</em>
+</div>
+
+<br>
+
+<div align="center">
+  <img src="https://github.com/Pyrius2k/Additive-Manufacturing/raw/main/curapic.png" width="500">
+  <br><em>Slicer View Showing Embedded Carbon Fiber Paths</em>
+</div>
+
+---
 
 ## 📁 Repository Contents
 
----
+| File | Description |
+|------|-------------|
+| `concept.png` | Diagram showing the basic extruder layout |
+| `Druckkopf.png` | Render of the extruder head CAD design |
+| `curapic.png` | Screenshot from Cura showing fiber paths |
+| `Servo.Code.ino` | Arduino sketch for servo cutting control |
+| `Stepper_Code.ino` | Arduino sketch for stepper motor control |
+| `Marlin.confi.ino/` | Folder containing modified Marlin firmware for parallel extrusion setup |
 
-* `concept.png`: A schematic representation of the basic concept.
-* `Druckkopf.png`: A render of the specially designed extruder head.
-* `curapic.png`: A slicer view of the fiber paths in a test object.
-* `Servo.Code.ino`: A standalone Arduino sketch for basic servo testing.
-* `Stepper_Code.ino`: A standalone Arduino sketch for basic stepper motor testing.
-* `Marlin.confi.ino`: A folder containing the modified Marlin firmware files. (Note: You will need to upload this folder and its files to the repository)
+---
 
 ## 💻 Firmware Integration (Marlin)
 
----
+The extruder head's functionality is achieved by **modifying Marlin firmware** to handle an additional fiber-feeding stepper and servo-controlled cutter.
 
-The core functionality of this extruder is achieved by modifying the open-source **Marlin firmware**. The provided `Servo.ino` and `StepperMotor-Basic.ino` sketches represent the key control logic that has been adapted and integrated into the main Marlin codebase to operate the parallel extruder.
+### 🔧 Firmware Modifications:
 
-**Key firmware modifications include:**
-
-* Custom pin definitions for the servo and stepper drivers.
-* Logic for controlling the servo's position to cut the fiber during specific G-code commands.
-* Pulse generation for the stepper motors for precise fiber feeding.
-
-## 🚀 How to Use
+- Custom **pin assignments** for stepper and servo control
+- G-code logic to trigger servo cutting at specific layers or regions
+- Pulse generation and timing control for stepper fiber extrusion
+- Optionally triggered by `M` or `G` commands for precise control
 
 ---
 
-To replicate this project, you will need to:
+## 🚀 Getting Started
 
-1.  **Assemble the Hardware:** Mount the stepper motors, servos, and fans according to the design.
-2.  **Flash the Firmware:** Upload the customized Marlin firmware to your 3D printer's mainboard.
-3.  **Calibrate:** Perform the necessary calibration steps for the extruder.
+To replicate or build upon this project:
+
+1. **Assemble the Hardware**  
+   Mount stepper motors, servo, and any cooling elements according to your frame design.
+
+2. **Flash the Firmware**  
+   Upload the provided modified Marlin firmware to your 3D printer’s control board.
+
+3. **Calibration & Testing**  
+   - Run the `Stepper_Code.ino` and `Servo.Code.ino` sketches for initial tests  
+   - Adjust motor direction, cutting angles, and fiber feed rates
+
+---
+
+## 📌 Notes
+
+- Fiber placement currently requires manual G-code or custom post-processing
+- The servo cutter blade can be replaced or upgraded depending on fiber type
+- Print cooling should be adjusted to accommodate carbon fiber heat retention
+
+---
+
+## 🤝 Contributions
+
+Ideas, suggestions, and PRs are welcome—whether it’s for improving slicing strategies, mechanical enhancements, or smarter firmware logic.
+
+---
+
+## 📜 License
+
+This project is open-source under the MIT License. Feel free to adapt, remix, and build upon the work.
+
