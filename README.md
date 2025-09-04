@@ -56,6 +56,9 @@ The extruder is fully integrated with slicing software (e.g., Cura) to allow for
 | `Servo.Code.ino` | Arduino sketch for servo cutting control |
 | `Stepper_Code.ino` | Arduino sketch for stepper motor control |
 | `Marlin.confi.ino/` | Folder containing modified Marlin firmware for parallel extrusion setup |
+| `Configuration.h` | Main Marlin configuration file (printer parameters, thermistors, steps, limits) |
+| `Configuration_adv.h` | Advanced Marlin settings (extruder, stepper drivers, advanced features) |
+| `Version.h` | Version info and build metadata for Marlin |
 
 ---
 
