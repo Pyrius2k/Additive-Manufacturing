@@ -1,6 +1,6 @@
 # ⚙️ Parallel Extruder Head for Fiber-Reinforced 3D Printing
 
-This repository contains the firmware and design files for a custom-built extruder head designed for the 3D printing of fiber-reinforced objects. Inspired by the **Markforged concept**, this project features a **parallel extruder system** capable of handling both standard filament and **coated carbon fibers**, enabling the creation of high-strength composite prints.
+This repository contains the firmware and design files for a custom-built extruder head designed for the 3D printing of fiber-reinforced objects. Inspired by the **Markforged concept**, this project features a **parallel extruder system** capable of handling both standard filament and **coated carbon fibers**, enabling the production of high-strength composite prints.
 
 ---
 
