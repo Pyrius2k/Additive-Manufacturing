@@ -64,14 +64,15 @@ The extruder is fully integrated with slicing software (e.g., Cura) to allow for
 
 ## 💻 Firmware Integration (Marlin)
 
-The extruder head's functionality is achieved by **modifying Marlin firmware** to handle an additional fiber-feeding stepper and servo-controlled cutter.
+The extruder head's functionality is achieved by **modifying Marlin firmware** to handle an additional fiber-feeding stepper and servo-controlled cutter.  
+All of the components (stepper, servo, heaters, sensors) were connected to a **RAMPS board**, which served as the main control interface between the hardware and the modified firmware.  
 
 ### 🔧 Firmware Modifications:
 
-- Custom **pin assignments** for stepper and servo control
-- G-code logic to trigger servo cutting at specific layers or regions
-- Pulse generation and timing control for stepper fiber extrusion
-- Optionally triggered by `M` or `G` commands for precise control
+- Custom **pin assignments** for stepper and servo control  
+- G-code logic to trigger servo cutting at specific layers or regions  
+- Pulse generation and timing control for stepper fiber extrusion  
+- Optionally triggered by `M` or `G` commands for precise control  
 
 ---
 
@@ -80,22 +81,23 @@ The extruder head's functionality is achieved by **modifying Marlin firmware** t
 To replicate or build upon this project:
 
 1. **Assemble the Hardware**  
-   Mount stepper motors, servo, and any cooling elements according to your frame design.
+   Mount stepper motors, servo, and any cooling elements according to your frame design.  
+   Connect all components to a **RAMPS board** for power and control.  
 
 2. **Flash the Firmware**  
-   Upload the provided modified Marlin firmware to your 3D printer’s control board.
+   Upload the provided modified Marlin firmware to your 3D printer’s control board.  
 
 3. **Calibration & Testing**  
    - Run the `Stepper_Code.ino` and `Servo.Code.ino` sketches for initial tests  
-   - Adjust motor direction, cutting angles, and fiber feed rates
+   - Adjust motor direction, cutting angles, and fiber feed rates  
 
 ---
 
 ## 📌 Notes
 
-- Fiber placement currently requires manual G-code or custom post-processing
-- The servo cutter blade can be replaced or upgraded depending on fiber type
-- Print cooling should be adjusted to accommodate carbon fiber heat retention
+- Fiber placement currently requires manual G-code or custom post-processing  
+- The servo cutter blade can be replaced or upgraded depending on fiber type  
+- Print cooling should be adjusted to accommodate carbon fiber heat retention  
 
 ---
 
@@ -110,6 +112,3 @@ Ideas, suggestions, and PRs are welcome—whether it’s for improving slicing s
 [![Patent US20180345572A1](https://img.shields.io/badge/📄_Patent-US20180345572A1-blue?style=for-the-badge)](https://patents.google.com/patent/US20180345572A1/en)
 
 [![Patent US9370896B2](https://img.shields.io/badge/📄_Patent-US9370896B2-green?style=for-the-badge)](https://patents.google.com/patent/US9370896B2/en)
-
-
-
