@@ -61,16 +61,16 @@ The following pins were utilized to integrate the custom extruder head while mai
   <br><em>RAMPS Pin Diagram (Left) and Actual Wiring (Right)</em>
 </div>
 
-| Pin/Port Function | Purpose in Project | Used Port |
-|:------------------|:-------------------|:----------|
-| **1. Heating Element** | Heating for the standard filament extruder (E0). | D10 |
-| **2. Fiber Stepper** | Dedicated stepper motor for **fiber feed control**. | E1 |
-| **3. End Stops** | Standard X, Y, Z limit switches for printer homing. | End Stop Pins |
-| **4. Thermistor** | Temperature sensing for the hotend. | T0 |
-| **5. Steppers (X/Y/Z)**| Standard motion control for the FLM printer. | X, Y, Z Drivers |
-| **6. Auxiliary (AUX)** | Used for controlling the **fiber-cutting Servo Motor**. | AUX-4 (Specific Pin) |
-| **7. Fan 1** | Standard part cooling fan. | D9 |
-| **8. Fan 2** | Used as an auxiliary fan or extruder cooling. | D8 |
+| Pin/Port Function | Purpose in Project | 
+|:------------------|:-------------------|
+| **1. Heating Element** | Heating for the standard filament extruder (E0). |
+| **2. Fiber Stepper** | Dedicated stepper motor for **fiber feed control**. | 
+| **3. End Stops** | Standard X, Y, Z limit switches for printer homing. | 
+| **4. Thermistor** | Temperature sensing for the hotend. | 
+| **5. Steppers (X/Y/Z)**| Standard motion control for the FLM printer. | 
+| **6. Auxiliary (AUX)** | Used for controlling the **fiber-cutting Servo Motor**. |
+| **7. Fan 1** | Standard part cooling fan. |
+| **8. Fan 2** | Used as an auxiliary fan or extruder cooling. |
 
 ### 📄 Firmware Modifications:
 
@@ -99,35 +99,25 @@ The following pins were utilized to integrate the custom extruder head while mai
 
 ---
 
-## 📊 Results
+## 📊 Results & Process Limitations
 
 <div align="center">
-  <img src="https://github.com/Pyrius2k/Additive-Manufacturing/raw/main/testresult.png" width="500">
-  <br><em>Example of a printed part demonstrating successful fiber embedding.</em>
+  <img src="https://github.com/Pyrius2k/Additive-Manufacturing/raw/main/testresult.png" width="300">
+  <br><em>Example of a printed part demonstrating fiber embedding.</em>
 </div>
 
----
+While the developed system successfully integrated the mechanical and electronic components for dual-extrusion, **the initial printing process optimization revealed significant challenges.**
 
-## 🚀 Getting Started
-
-To replicate or build upon this project:
-
-1. **Assemble the Hardware**
-   Mount stepper motors, servo, and any cooling elements according to your frame design. Connect all components precisely to the **RAMPS board** as detailed in the wiring documentation.
-
-2. **Flash the Firmware**
-   Upload the provided modified Marlin firmware (from the `Marlin.confi.ino/` folder) to your 3D printer’s control board.
-
-3. **Calibration & Testing**
-   - Use the `Stepper_Code.ino` and `Servo.Code.ino` sketches for initial component testing.
-   - Adjust motor direction, cutting angles, and fiber feed rates in the firmware and through test prints.
+* **Process Limitation:** During test prints, the **continuous carbon fiber tended to shear off** prematurely before the current print layer was completed, compromising the intended reinforcement.
+* **Next Steps:** This issue indicates that the current combination of print parameters (temperature, speed, fiber feed rate, and bonding agent activation) is not yet fully optimized. **Further iterative parameter studies are urgently required** to achieve consistent, defect-free fiber embedding and validate the full strength potential of the composite parts.
 
 ---
 
 ## 📌 Notes
 
-- Fiber placement currently requires manual G-code injection or custom post-processing scripts.
-- The servo cutter blade can be replaced or upgraded depending on the specific fiber material used.
+-   Fiber placement currently requires manual G-code injection or custom post-processing scripts.
+-   The servo cutter blade can be replaced or upgraded depending on the specific fiber material used.
+-   **The presented system serves as a functional prototype; optimization of print parameters (especially to prevent fiber shearing) is the focus of subsequent process iterations.**
 
 ---
 
