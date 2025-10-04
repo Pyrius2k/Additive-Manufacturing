@@ -33,8 +33,8 @@ The primary objective of this project is to significantly improve the **tensile 
 The custom print head was designed and realized with a focus on compactness and precision. It is fully integrated with slicing software (e.g., Cura) to allow for **strategic fiber placement** in designated toolpaths.
 
 <div align="center">
-  <img src="https://github.com/Pyrius2k/Additive-Manufacturing/raw/main/Druckkopf.png" width="450">
-  <img src="https://github.com/Pyrius2k/Additive-Manufacturing/raw/main/druckkopf.jpeg" width="450">
+  <img src="https://github.com/Pyrius2k/Additive-Manufacturing/raw/main/Druckkopf.png" width="300">
+  <img src="https://github.com/Pyrius2k/Additive-Manufacturing/raw/main/druckkopf.jpeg" width="300">
   <br><em>3D Render (Left) and Realized Physical Extruder Head (Right)</em>
 </div>
 
@@ -102,7 +102,7 @@ The following pins were utilized to integrate the custom extruder head while mai
 ## 📊 Results & Process Limitations
 
 <div align="center">
-  <img src="https://github.com/Pyrius2k/Additive-Manufacturing/raw/main/testresult.png" width="300">
+  <img src="https://github.com/Pyrius2k/Additive-Manufacturing/raw/main/testresult.png" width="200">
   <br><em>Example of a printed part demonstrating fiber embedding.</em>
 </div>
 
