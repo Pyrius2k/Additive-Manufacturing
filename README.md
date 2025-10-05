@@ -9,7 +9,7 @@ This repository contains the **firmware, design files, and process documentation
 The image below illustrates the core concept: an integrated dual-extrusion head—one for standard polymer filament and another for the controlled feeding and cutting of coated carbon fibers.
 
 <div align="center">
-  <img src="https://github.com/Pyrius2k/Additive-Manufacturing/raw/main/concept.png" width="500">
+  <img src="https://github.com/Pyrius2k/Additive-Manufacturing/raw/main/concept.png" width="500">
 </div>
 
 ---
@@ -22,8 +22,8 @@ The primary objective of this project is to significantly improve the **tensile 
 
 - **Fiber Reinforcement**: Optimized for co-extruding coated carbon fibers alongside standard filament (e.g., PLA).
 - **Precision Mechanics**:
-    - **Dedicated Stepper Motor** for accurate, separate fiber feeding.
-    - **Servo Motor** with a sharp blade to precisely cut fiber segments after each reinforced section.
+    - **Dedicated Stepper Motor** for accurate, separate fiber feeding.
+    - **Servo Motor** with a sharp blade to precisely cut fiber segments after each reinforced section.
 - **Lightweight Design**: Carefully engineered to reduce head weight for faster, more accurate prints.
 
 ---
@@ -33,16 +33,16 @@ The primary objective of this project is to significantly improve the **tensile 
 The custom print head was designed and realized with a focus on compactness and precision. It is fully integrated with slicing software (e.g., Cura) to allow for **strategic fiber placement** in designated toolpaths.
 
 <div align="center">
-  <img src="https://github.com/Pyrius2k/Additive-Manufacturing/raw/main/Druckkopf.png" width="300">
-  <img src="https://github.com/Pyrius2k/Additive-Manufacturing/raw/main/druckkopf.jpeg" width="300">
-  <br><em>3D Render (Left) and Realized Physical Extruder Head (Right)</em>
+  <img src="https://github.com/Pyrius2k/Additive-Manufacturing/raw/main/Druckkopf.png" width="300">
+  <img src="https://github.com/Pyrius2k/Additive-Manufacturing/raw/main/druckkopf.jpeg" width="300">
+  <br><em>3D Render (Left) and Realized Physical Extruder Head (Right)</em>
 </div>
 
 <br>
 
 <div align="center">
-  <img src="https://github.com/Pyrius2k/Additive-Manufacturing/raw/main/curapic.png" width="500">
-  <br><em>Slicer View Showing Embedded Carbon Fiber Paths (for tensile test specimens)</em>
+  <img src="https://github.com/Pyrius2k/Additive-Manufacturing/raw/main/curapic.png" width="500">
+  <br><em>Slicer View Showing Embedded Carbon Fiber Paths (for tensile test specimens)</em>
 </div>
 
 ---
@@ -51,23 +51,32 @@ The custom print head was designed and realized with a focus on compactness and 
 
 The extruder head's functionality is achieved by **modifying Marlin firmware** to handle the additional fiber-feeding stepper and servo-controlled cutter. All components were connected to a **RAMPS 1.4 control board**.
 
+### ⚙️ The Base Printer
+
+The custom extruder head was designed for integration into an existing Fused Layer Modeling (FLM) machine.
+
+<div align="center">
+  <img src="big3dprinter.png" alt="FLM Printer in Real Life" width="300">
+  <br><em>The large-format FLM printer providing the build volume and motion control for the project.</em>
+</div>
+
 ### 🔌 RAMPS Connection Overview:
 
 The following pins were utilized to integrate the custom extruder head while maintaining the base FLM printer functionality:
 
 <div align="center">
-  <img src="https://github.com/Pyrius2k/Additive-Manufacturing/raw/main/Rampsconnections.png" width="400">
-  <img src="https://github.com/Pyrius2k/Additive-Manufacturing/raw/main/verschaltungBA.png" width="400">
-  <br><em>RAMPS Pin Diagram (Left) and Actual Wiring (Right)</em>
+  <img src="https://github.com/Pyrius2k/Additive-Manufacturing/raw/main/Rampsconnections.png" width="400">
+  <img src="https://github.com/Pyrius2k/Additive-Manufacturing/raw/main/verschaltungBA.png" width="400">
+  <br><em>RAMPS Pin Diagram (Left) and Actual Wiring (Right)</em>
 </div>
 
-| Pin/Port Function | Purpose in Project | 
+| Pin/Port Function | Purpose in Project |
 |:------------------|:-------------------|
 | **1. Heating Element** | Heating for the standard filament extruder (E0). |
-| **2. Fiber Stepper** | Dedicated stepper motor for **fiber feed control**. | 
-| **3. End Stops** | Standard X, Y, Z limit switches for printer homing. | 
-| **4. Thermistor** | Temperature sensing for the hotend. | 
-| **5. Steppers (X/Y/Z)**| Standard motion control for the FLM printer. | 
+| **2. Fiber Stepper** | Dedicated stepper motor for **fiber feed control**. |
+| **3. End Stops** | Standard X, Y, Z limit switches for printer homing. |
+| **4. Thermistor** | Temperature sensing for the hotend. |
+| **5. Steppers (X/Y/Z)**| Standard motion control for the FLM printer. |
 | **6. Auxiliary (AUX)** | Used for controlling the **fiber-cutting Servo Motor**. |
 | **7. Fan 1** | Standard part cooling fan. |
 | **8. Fan 2** | Used as an auxiliary fan or extruder cooling. |
@@ -89,6 +98,7 @@ The following pins were utilized to integrate the custom extruder head while mai
 | `Druckkopf.png` / `druckkopf.jpeg` | Render and photo of the final extruder head CAD design/realization. |
 | `curapic.png` / `CuraCode.png` | Screenshots from Cura showing fiber paths and the corresponding **G-code logic** used to control the servo cutter. |
 | `Rampsconnections.png` / `verschaltungBA.png` | Diagram and photo detailing the **electrical connections** to the RAMPS board. |
+| `big3dprinter.png` | Photo of the large-format FLM printer used as the base machine. |
 | `testresult.png` | Image showcasing a **successfully printed object with embedded fibers**. |
 | `Servo.Code.ino` | Standalone Arduino sketch for initial testing and calibration of the **servo cutting control**. |
 | `Stepper_Code.ino` | Standalone Arduino sketch for initial testing and calibration of the **stepper fiber feed**. |
@@ -102,8 +112,8 @@ The following pins were utilized to integrate the custom extruder head while mai
 ## 📊 Results & Process Limitations
 
 <div align="center">
-  <img src="https://github.com/Pyrius2k/Additive-Manufacturing/raw/main/testresult.png" width="200">
-  <br><em>Example of a printed part demonstrating fiber embedding.</em>
+  <img src="https://github.com/Pyrius2k/Additive-Manufacturing/raw/main/testresult.png" width="200">
+  <br><em>Example of a printed part demonstrating fiber embedding.</em>
 </div>
 
 While the developed system successfully integrated the mechanical and electronic components for dual-extrusion, **the initial printing process optimization revealed significant challenges.**
@@ -115,9 +125,9 @@ While the developed system successfully integrated the mechanical and electronic
 
 ## 📌 Notes
 
--   Fiber placement currently requires manual G-code injection or custom post-processing scripts.
--   The servo cutter blade can be replaced or upgraded depending on the specific fiber material used.
--   **The presented system serves as a functional prototype; optimization of print parameters (especially to prevent fiber shearing) is the focus of subsequent process iterations.**
+-   Fiber placement currently requires manual G-code injection or custom post-processing scripts.
+-   The servo cutter blade can be replaced or upgraded depending on the specific fiber material used.
+-   **The presented system serves as a functional prototype; optimization of print parameters (especially to prevent fiber shearing) is the focus of subsequent process iterations.**
 
 ---
 
